@@ -1,18 +1,28 @@
 import studentgrade
-import pandas
+import pandas as pd
 import streamlit as st
+
 
 
 studentgrade.print_mult_table(5, 20)
 
+if "username" in st.session_state:
+    st.write(f"Hello,{st.session_state["username"]}")
+else:
+    st.write("Please login")
 
-
-data = pandas.read_csv("products.csv")
+uploaded_file = st.file_uploader("Choose a file", type=["csv", "xlsx"])
+if uploaded_file is None:
+    st.write("Please uploaded file")
+   
+else:
+ data = pd.read_csv(uploaded_file)
+ data = pd.read_csv("products.csv")
 # print(data)
 # st.write(data)
 
 st.title ("Dashboard")
-st. write ("this application is abount displaying product sales")
+st. write ("this application is about displaying product sales")
 
 col1, col2, col3 = st.columns(3)
 with col1:
