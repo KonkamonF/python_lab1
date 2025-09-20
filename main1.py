@@ -22,6 +22,13 @@ with col2:
 with col3:
     st.metric("User", "$ 15,000", "8%")
 
+
+
 st.header ("Sales table")
 st.subheader ("This is a sales table")
 st.write (data)
+
+st.line_chart(data["sales"])
+if st.checkbox("Show table"):
+    st.subheader("This is a table")
+    st.write(data)
