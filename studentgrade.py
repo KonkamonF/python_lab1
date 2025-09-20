@@ -13,7 +13,7 @@ students = [
 print(students)
 for s in students:
  if s["grade"] == "A":
-   
+   print(s["name"])
 
-    count = sum(1 for s in students if s["grade"] == "A")
-
+count = sum(1 for s in students if s["grade"] == "A")
+print("นักเรียนที่ได้ A มี", count,"คน")
